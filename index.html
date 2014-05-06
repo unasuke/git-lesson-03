@@ -54,202 +54,58 @@
 				</section>
 
 				<section>
-					<h2>謝罪</h2>
+					<h2>clone</h2>
 				</section>
 
 				<section>
-					<h2>謝罪</h2>
-					<p>前回の講義(?)でSourceTreeを使いました</p>
-					<p class="fragment"><strong>アンインストールしてください</strong></p>
+					<h2>clone</h2>
+					<p>目的は、「コードが失われても取り戻せるように」</p>
+					<p class="fragment"><strong>なら取り戻せないと意味が無い!</strong></p>
 				</section>
 
 				<section>
-					<h2>謝罪</h2>
-					<h3>理由</h3>
-					<p>共用のPCで使うにはやっぱり危ないところ多すぎ</p>
-					<p class="fragment">黒い画面でカタカタ→カッコイイ＆プログラマーっぽい</p>
+					<h2>clone</h2>
+					<p>今回は「何もかも消えた！！」ときに、bitbucketやGitHubから取り戻す方法をやります</p>
+					<small>他には「間違えてあのファイルを消してしまった！」って時とかね</small>
 				</section>
 
 				<section>
-					<p>前回やった作業をコマンドプロンプトではどうやってするのかっていうのを、やります</p>
+					<h2>clone</h2>
+					<h3>試しにやってみよう</h3>
+					<pre><code>
+$ git clone https://github.com/unasuke/git-lesson-02.git
+					</code></pre>
+					<p class="fragment">このスライドがまるっと手元に降りてきたかな？</p>
 				</section>
 
 				<section>
-					<section>
-						<h2>Gitの準備</h2>
-					</section>
-
-					<section>
-						<h2>Gitの準備</h2>
-						<p>まずはGitの準備</p>
-						<pre><code>
-#このディレクトリをgitで管理しますよ、っていう宣言
-$ git init
-						</code></pre>
-					</section>
-
-					<section>
-						<h2>初期設定</h2>
-						<ul>
-							<li>名前</li>
-							<li>メールアドレス</li>
-						</ul>
-					</section>
-
-					<section>
-						<h2>初期設定</h2>
-						<pre><code>
-#自分の名前とメールアドレス
-$ git config user.name "Tarou Fukui"
-$ git config user.email hogehoge@gmail.com
-						</code></pre>
-						<p class="fragment">ここで--globalをつけるとそのパソコン全体の設定になる</p>
-					</section>
+					<h2>clone</h2>
+					<h3>試しにやってみようその2</h3>
+					<p>自分のgitリポジトリを、commitしてpushして、全部削除してからcloneしてみよう</p>
+					<pre><code>
+$ git clone リポジトリのURL
+					</code></pre>
+					<small>pushが成功してからやること</small>
 				</section>
 
 				<section>
-					<p>ファイルを追加or削除or編集してみよう……</p>
+					<h2>clone</h2>
+					<h3>URLはどこに？</h3>
+					<img src="images/github-clone-url.png">
 				</section>
 
 				<section>
-					<section>
-						<h2>status</h2>
-						<pre><code>
-#現在の状態を表示
-$ git status
-						</code></pre>
-						<p>ファイルが追加されたのか、変更されたのかなどの状態が見れます</p>
-					</section>
-
-					<section>
-						<h2>statusの例</h2>
-						<pre><code>
-#みんなならここは日本語で出るはず
-$ git status
-On branch gh-pages
-Your branch is up-to-date with 'origin/gh-pages'.
-
-Changes not staged for commit:
-  (use "git add file..." to update what will be committed)
-  (use "git checkout -- file..." to discard changes in working directory)
-
-	modified:   index.html
-
-no changes added to commit (use "git add" and/or "git commit -a")
-						</code></pre>
-						<p>5つのファイルに変更(modified)があることがわかります</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>commitしよう</h2>
-					</section>
-
-					<section>
-						<h2>commitしよう</h2>
-						<h3>addから</h3>
-						<pre><code>
-#git add ファイル名でファイルをステージ(コミットされるファイルの舞台)にあげる
-$ git add hogehoge.txt
-
-#いっぱいファイルがあってめんどくさいときはこれで変更されたファイルが一気にaddされる
-$ git add .
-						</code></pre>
-					</section>
-
-					<section>
-						<h2>commitしよう</h2>
-						<h3>いよいよcommitする</h3>
-						<p>※まだやらないでね！！</p>
-						<pre><code>
-#commitします(3回目)
-$ git commit
-						</code></pre>
-						<p>みんなだとここでvimが立ち上がるかな</p>
-					</section>
-
-					<section>
-						<h2>commitしよう</h2>
-						<h3>vimとか勘弁してくれ</h3>
-						<p>vimは(今は)難しくてめんどくさいので、秀丸エディタでコミットメッセージが書けるように設定します。</p>
-					</section>
-
-					<section>
-						<h2>commitしよう</h2>
-						<h3>秀丸エディタの設定</h3>
-						<pre><code>
-#多分これで秀丸エディタが起動するようになるはず
-$ git config core.editor "'C:/Program Files (x86)/Hidemaru/Hidemaru.exe' //fu8"
-						</code></pre>
-						<p>参考URL:<a href="http://takanosho.wordpress.com/2012/02/19/git-japanese/">Git日本語対応備忘録</a></p>
-					</section>
-
-					<section>
-						<h2>commitしよう</h2>
-						<h3>コミットメッセージを書く</h3>
-						<p>
-						<ul>
-							<li class="fragment">1行目:簡単な説明(英語がmore better?)</li>
-							<li class="fragment">2行目:書かない</li>
-							<li class="fragment">3行目以降:詳しく書く</li>
-						</ul>
-						</p>
-						<p>どんな風に書けばいいかっていうのは色んな意見があります</p>
-						<p>参考URL:<a href="http://qiita.com/yshr04hrk/items/39e54334b98f43544f22">オレオレコミットメッセージの生煮え書き方</a>など</p>
-					</section>
-
-					<section>
-						<h2>commitしよう</h2>
-						<h3>コミットメッセージの例</h3>
-						<p>例えば、ある関数を追加した時</p>
-						<img src="images/commitmessage.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>pushしよう</h2>
-						<p>pushして初めて「ソースコードのバックアップ」がなされる。</p>
-						<p class="fragment"><strong>pushを忘れるな。pushを恐れるな。</strong></p>
-					</section>
-
-					<section>
-						<h2>pushしよう</h2>
-						<h3>リモートリポジトリの追加</h3>
-						<p>バックアップ先のURLの追加をします</p>
-					</section>
-
-					<section>
-						<h2>pushしよう</h2>
-						<h3>リモートリポジトリの追加</h3>
-						<pre><code>
-#リポジトリを作った時の説明にあったように……(このURLは例だよ)
-$ git remote add origin https://github.com/unasuke/git-lesson-02.git
-						</code></pre>
-					</section>
-
-					<section>
-						<h2>pushしよう</h2>
-						<h3>push</h3>
-						<pre><code>
-#originのmasterブランチにpush(意味がわからない)
-$ git push origin master
-						</code></pre>
-						<p>参考URL:<a href="http://dqn.sakusakutto.jp/2011/10/git_push_origin_master.html">Git超入門："git push origin master"の"push"と"origin"と"master"の意味がわからないあなたへ</a></p>
-					</section>
-				</section>
-
-				<section>
-					<p>あとは変更→add→commitを繰り返して、1日の終りににpushぐらいでいいんじゃないかな？</p>
+					<h2>clone</h2>
+					<h3>URLはどこに？</h3>
+					<img src="images/bitbucket-clone-url.png">
 				</section>
 
 				<section>
 					<h2>次回予告</h2>
 					<ul>
-						<li>cloneとは</li>
-						<li>Pull Requestとは</li>
+						<li>checkoutとは</li>
 					</ul>
+					<small>Pull Requestについてはもう少し後回しにさせて</small>
 				</section>
 
 			</div>
